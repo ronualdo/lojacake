@@ -5,6 +5,7 @@ use Cake\TestSuite\IntegrationTestCase;
 
 class ProdutoIntegrationTest extends IntegrationTestCase
 {
+    public $fixtures = ['app.produtos'];
 
     public function testDeveInformarQuandoProdutoFoiCriadoComSucesso()
     {
@@ -13,7 +14,7 @@ class ProdutoIntegrationTest extends IntegrationTestCase
             'valor' => 12.5
         ];
 
-        $this->post('/produto.json', $produto);
+        $this->post('/produtos.json', $produto);
 
         $this->assertResponseCode(200);
         $this->assertResponseContains('"id":');
@@ -27,10 +28,10 @@ class ProdutoIntegrationTest extends IntegrationTestCase
             'valor' => 12.5
         ];
 
-        $this->post('/produto.json', $produto);
+        $this->post('/produtos.json', $produto);
 
         $this->assertResponseCode(400);
-        $this->assertResponseContains('"mensagem": "campo nome e obrigatorio"');
+        $this->assertResponseContains('campo nome e obrigatorio');
     }
 
     public function testDeveInformarQuandoProdutoNaoPossuirValor()
@@ -39,10 +40,19 @@ class ProdutoIntegrationTest extends IntegrationTestCase
             'nome' => 'Caneta'
         ];
 
-        $this->post('/produto.json', $produto);
+        $this->post('/produtos.json', $produto);
 
         $this->assertResponseCode(400);
-        $this->assertResponseContains('"mensagem": "campo valor e obrigatorio"');
+        $this->assertResponseContains('campo valor e obrigatorio');
+    }
+
+    public function testDeveRetornarProdutoCadastradoAnteriormente()
+    {
+
+        $this->get('/produtos/1.json');
+
+        $this->assertResponseCode(200);
+        $this->assertResponseContains('"id": 1');
     }
 }
 

@@ -49,7 +49,7 @@ Router::scope('/', function ($routes) {
      */
     #$routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     $routes->extensions(['json']);
-    $routes->resources('Produto');
+    $routes->resources('Produtos');
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
