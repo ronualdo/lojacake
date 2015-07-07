@@ -219,7 +219,7 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'nonstandard_port_number',
-            'username' => 'postgres',
+            'username' => 'vagsmjauxrmkzy',
             'password' => 'EifkLpE2SIwK_Kkls3q2DeUDU0',
             'database' => 'ddgcr6qqmpq1qs',
             'encoding' => 'utf8',
