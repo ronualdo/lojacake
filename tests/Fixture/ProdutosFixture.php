@@ -19,7 +19,6 @@ class ProdutosFixture extends TestFixture
     {
         $this->records = [
             [
-                'id' => 1,
                 'nome' => 'caneta',
                 'valor' => 12.5
             ]
