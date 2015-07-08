@@ -3,6 +3,9 @@ namespace App\Test\TestCase\Controller;
 
 use Cake\TestSuite\IntegrationTestCase;
 
+/**
+ * @group aceitacao
+ */
 class ProdutoIntegrationTest extends IntegrationTestCase
 {
     public $fixtures = ['app.produtos'];
