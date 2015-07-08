@@ -253,7 +253,7 @@ return [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
-            'host' => getenv('SNAP_DB_MYSQL_HOST'),
+            'host' => '127.0.0.1',
             //'port' => 'nonstandard_port_number',
             'username' => getenv('SNAP_DB_MYSQL_USER'),
             'password' => getenv('SNAP_DB_MYSQL_PASSWORD'),
