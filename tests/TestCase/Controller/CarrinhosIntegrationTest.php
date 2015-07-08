@@ -3,6 +3,9 @@
 
     use Cake\TestSuite\IntegrationTestCase;
 
+    /**
+     * @group aceitacao
+     */
     class CarrinhosIntegrationTest extends IntegrationTestCase {
         public $fixtures = [
             'app.carrinhos',
