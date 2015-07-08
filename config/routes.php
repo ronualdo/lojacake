@@ -50,11 +50,17 @@ Router::scope('/', function ($routes) {
     #$routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     $routes->extensions(['json']);
     $routes->resources('Produtos');
+    $routes->resources('Carrinhos');
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     #$routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+    $routes->connect(
+        '/carrinhos/:id/produtos',
+        ['controller' => 'Carrinhos', 'action' => 'adicionarProdutos'],
+        [ ":id" => "0-9+", 'pass' => ['id'] ]
+    );
 
     /**
      * Connect catchall routes for all controllers.

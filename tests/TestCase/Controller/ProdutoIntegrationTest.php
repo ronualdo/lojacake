@@ -21,7 +21,7 @@ class ProdutoIntegrationTest extends IntegrationTestCase
 
         $this->assertResponseCode(200);
         $this->assertResponseContains('"id":');
-        $this->assertResponseContains('"nome": "Caneta"');
+        $this->assertResponseContains('nome": "Caneta');
         $this->assertResponseContains('"valor": 12.5');
     }
 

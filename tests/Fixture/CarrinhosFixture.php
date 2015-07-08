@@ -4,12 +4,11 @@ namespace App\Test\Fixture;
 
 use Cake\TestSuite\Fixture\TestFixture;
 
-class ProdutosFixture extends TestFixture
+class CarrinhosFixture extends TestFixture
 {
     public $fields = [
         'id' => ['type' => 'integer'],
-        'nome' => ['type' => 'string'],
-        'valor' => ['type' => 'decimal'],
+        'user_id' => ['type' => 'integer'],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id']],
         ]
@@ -19,13 +18,8 @@ class ProdutosFixture extends TestFixture
     {
         $this->records = [
             [
-                'nome' => 'caneta',
-                'valor' => 12.5
-            ],
-            [
-                'id' => 2,
-                'nome' => 'borracha',
-                'valor' => 15.5
+                'id' => 1,
+                'user_id' => 1
             ]
         ];
         parent::init();
